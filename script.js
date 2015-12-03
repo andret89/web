@@ -1,12 +1,13 @@
 window.addEventListener()
 {
   // prendo il nodi con tag box sotto forma di array
-  var boxes = document.getElementsByClassName('box');
+  var boxes = document.getElementsByClassName("box");
   console.log(boxes.length)
   // TODO: non va dentro il for
   // FIXME: boxes.length sempre 0
-  for(var i = 0; i<boxes.length; i++){ 
-    var b = boxes[i]
+  var i;
+  for(i = 0; i < boxes.length; i++){
+    var b = boxes[i];
     //inserisce una velocita
     b.dx=i+1;
     b.dy=1;
@@ -17,9 +18,7 @@ window.addEventListener()
     var y = (el.style.left == "")  ? 0 : parseInt(el.style.left)
     return {'x':x, 'y':y}
   }
-  var interval = setInterval(
-    (function()
-    {
+  var interval = setInterval(function(){
       for(var i = 0; i<boxes.length; i++){
         var b = boxes[i]
         var pos = getPos(b)
@@ -28,7 +27,8 @@ window.addEventListener()
         pos.y += b.dy
         b.style.left = pos.x+'px'
         b.style.top = pos.y+'px'
-        console.log(pos)
+        //console.log(pos)
       }
-    }()),2);
+  },30);
+  //setInterval(function(){ alert("Hello"); }, 3000);
 }

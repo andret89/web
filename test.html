@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Animazioni in javascript</title>
+<style type="text/css">
+
+#content {
+ position:relative;
+ left:0px;
+ top:10px;
+ width:20px;
+ height:20px;
+ background:#336699;
+ border:1px solid #003366;
+ padding:5px;
+ color:#FFFFFF;
+}
+
+
+</style>
+<script type="text/javascript">
+
+var div = null;
+var msec = 30;
+var id = 0;
+
+function init() {
+  div = document.getElementById('content'); //DIV da animare
+  div.style.left = '0px'; //Punto di partenza dell'animazione
+  animate(); //Chiamata alla funzione che anima il div
+}
+
+function animate() {
+  div.style.left = parseInt(div.style.left)+1+'px';//Sposta il div verso destra di un pixel alla volta
+  id = setTimeout(animate,msec);//Ripete lo spostamento per tot millisecondi
+}
+
+function stopAnimate() {
+clearTimeout(id);//Cancella l'animazione avviata da setTimeout
+}
+
+window.onload = init;
+
+</script>
+
+</head>
+<body>
+    <div class="content"></div>
+    <p>
+        <input type="button" value="STOP" onclick="stopAnimate()" />
+    </p>
+</body>
+</html>
