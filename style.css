@@ -1,10 +1,11 @@
+/* contenitore palline */
 #scatola {
     width: 200px;
     height: 200px;
     border:solid;
     color: green;
 }
-
+/* palline */
 div.box {
     position: relative;
     color: red;
