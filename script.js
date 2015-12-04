@@ -18,6 +18,7 @@ window.addEventListener('load',
       var y = (el.style.left == "")  ? 0 : parseInt(el.style.left)
       return {'x':x, 'y':y}
     }
+    // TODO: gestione collisioni
     function AABBcollision(posA,posB){
       return posA.x > posB.x || posA.y > posB.y 
     }
