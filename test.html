@@ -39,11 +39,11 @@ function animate() {
   id = setTimeout(animate,msec);//Ripete lo spostamento per tot millisecondi
 }
 
-function stopAnimate() {
+function stopAnimate1() {
   clearTimeout(id);//Cancella l'animazione avviata da setTimeout
 }
 
-$('#stop').bind('click',function(){ stopAnimate(); });
+$('#stop').bind('click',function(){ stopAnimate1(); });
 $('#start').bind('click',function(){ animate(); });
 //window.onload = init;
 $( 'document' ).ready(function() {
