@@ -3,6 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Animazioni in javascript</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> 
+
 <style type="text/css">
 
 #content {
@@ -36,19 +39,28 @@ function animate() {
   id = setTimeout(animate,msec);//Ripete lo spostamento per tot millisecondi
 }
 
-function stopAnimate() {
-clearTimeout(id);//Cancella l'animazione avviata da setTimeout
+function stopAnimate1() {
+  clearTimeout(id);//Cancella l'animazione avviata da setTimeout
 }
 
-window.onload = init;
+$('#stop').bind('click',function(){ stopAnimate1(); });
+$('#start').bind('click',function(){ animate(); });
+//window.onload = init;
+$( 'document' ).ready(function() {
+    init()
+    $( '#content').draggable();
+    }
+)
 
 </script>
 
 </head>
 <body>
-    <div class="content"></div>
+    <div id="content"></div>
     <p>
-        <input type="button" value="STOP" onclick="stopAnimate()" />
+        <input id="stop" type="button" value="STOP"/>
+        <input id="start" type="button" value="START"/>    
+    
     </p>
 </body>
 </html>

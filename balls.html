@@ -5,17 +5,29 @@
 	<meta charset="UTF-8">
 	<title>Balls</title>
 	<link rel="stylesheet" href="style.css">
-<!-- 	<script src="jquery-1.11.3.min.js"></script>
-    <script src="jquery-migrate-1.2.1.min.js"></script> -->
+	<!--<script src="jquery-1.11.3.min.js"></script>-->
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script> 
+	<script src="https://jqueryjs.googlecode.com/files/jquery-1.2.6-vsdoc.js"></script> 
 	<script src="script.js"></script>
+/// <reference path="http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.1-vsdoc.js" />
+	<script>
+		$( 'document' ).ready(function() {
+			$('.box').draggable();
+		})
+	</script>
+	
 
 </head>
 
 <body>
-	<div id="scatola">
-		<div class="box"></div>
-    	<div class="box"></div>
+	<div id="scatola" style="width:200px; height:200px;">
+    	<div class="box" style="width:20px; height:20px; top: 5px;
+    left: 5px;" ></div>
+		<!--<div class="box" style="width:20px; height:20px; top: 10px;
+    left: 5px;"></div>-->
 	</div>
+    <input type="button" value="START" onclick="startAnimate()" />
     <input type="button" value="STOP" onclick="stopAnimate()" />
 </body>
 </html>
